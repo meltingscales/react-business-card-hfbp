@@ -1,0 +1,26 @@
+
+.business-card {
+  // avoids changing size if padding/margin changes.
+  // critical as these need to be typographically aligned.
+  box-sizing: border-box;
+
+  //add padding for cutting
+  padding: 0.75em; //TODO: Is this correct?
+
+  background: black;
+  color: white;
+  width: 35em !important;
+  height: 20em !important;
+}
+
+.business-card pre code {
+  color: lightgreen;
+}
+
+.business-card-front {
+  border: 1px red;
+}
+
+.business-card-back {
+  border: 1px red;
+}
