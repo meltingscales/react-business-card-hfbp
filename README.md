@@ -4,7 +4,13 @@
 
 Very lightweight, vanilla (almost, we just use Bootstrap and SCSS) ReactJS business card template.
 
-![img.png](img.png)
+![https://github.com/HenryFBP/react-business-card-hfbp/raw/master/img.png](https://github.com/HenryFBP/react-business-card-hfbp/raw/master/img.png)
+
+## upload to npmjs.com
+
+    npm run build
+    npm test
+    npm publish
 
 ## how to use
 
