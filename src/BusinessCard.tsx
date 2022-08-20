@@ -1,5 +1,5 @@
 import {Button, Container, Row} from "react-bootstrap";
-import {Component, SyntheticEvent, useRef} from "react";
+import {SyntheticEvent, useRef} from "react";
 import {LeftRightText} from "./tidbits/LeftRightText";
 import "./BusinessCard.scss"
 import {useReactToPrint} from "react-to-print";
@@ -17,7 +17,7 @@ export type TBusinessCard = {
     skills?: string[],
 };
 
-export const BusinessCard = (props: TBusinessCard) => {
+const BusinessCard = (props: TBusinessCard) => {
 
     const componentRef = useRef(null);
     const handlePrint = useReactToPrint({
@@ -198,3 +198,5 @@ export const BusinessCard = (props: TBusinessCard) => {
     return render()
 
 }
+
+export default BusinessCard

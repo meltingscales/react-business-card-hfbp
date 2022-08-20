@@ -1,6 +1,7 @@
 {
   "name": "react-business-card-hfbp",
-  "version": "1.0.0",
+  "type": "module",
+  "version": "1.0.2",
   "license": "its free bro ;3c",
   "description": "Extremely lightweight business card template for ReactJS",
   "author": {
@@ -8,6 +9,7 @@
     "name": "Henry Post",
     "url": "https://github.com/HenryFBP/"
   },
+  "module": "src/BusinessCard.tsx",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
