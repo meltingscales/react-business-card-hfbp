@@ -1,9 +1,22 @@
-import {Container} from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 import {Component} from "react";
 import {LeftRightText} from "./tidbits/LeftRightText";
 import "./BusinessCard.scss"
 
-class BusinessCard extends Component {
+export type TBusinessCard = {
+    hidePrintButton?: boolean;
+    frontBlurb?: any;
+    backBlurb?: any;
+    name: string,
+    headlines: string[],
+    cell: string,
+    location: string,
+    website?: string,
+    email?: string,
+    skills?: string[],
+};
+
+export class BusinessCard extends Component<TBusinessCard> {
 
     //inspiration:
     //      https://png.pngtree.com/png-clipart/20200721/original/pngtree-programmer-business-card-black-png-image_4868136.jpg
@@ -14,18 +27,23 @@ class BusinessCard extends Component {
     // static WIDTH_TO_HEIGHT = (BusinessCard.WIDTH / BusinessCard.HEIGHT)
     // static HEIGHT_TO_WIDTH = (BusinessCard.HEIGHT / BusinessCard.WIDTH)
 
-    // @ts-ignore
-    props: {
-        frontBlurb?: any;
-        backBlurb?: any;
-        name: string,
-        headlines: string[],
-        cell: string,
-        location: string,
-        website?: string,
-        email?: string,
-        skills?: string[],
-    };
+    doThePrinty() {
+        alert("AOOGA printing for  "+this)
+    }
+
+    public renderPrintButton() {
+        return <>
+            <Button //WTF!!!! HOW DO YOU CENTER!! REEEEEEEE >:(
+                onClick={this.doThePrinty}
+                style={{
+                    textAlign: 'center'
+                }}
+            >
+                Print {this.props.name}'s Business Cards
+            </Button>
+        </>
+    }
+
 
     renderBack() {
         return <Container className={'business-card business-card-back'}>
@@ -70,16 +88,17 @@ class BusinessCard extends Component {
     }
 
     render() {
-        return <Container className={'business-card-both'}>
-            {this.renderFront()}
-            <hr/>
-            {this.renderBack()}
-        </Container>;
+        return <>
+            <Container className={'business-card-both'}>
+                {this.props.hidePrintButton ? null : this.renderPrintButton()}
+                {this.renderFront()}
+                <hr/>
+                {this.renderBack()}
+            </Container>
+        </>;
     }
 
     triggerPrint() {
         throw  new Error("TODO NYI")
     }
 }
-
-export default BusinessCard

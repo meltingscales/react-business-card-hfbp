@@ -1,12 +1,15 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
-import BusinessCard from './BusinessCard';
+import {ExampleBusinessCard} from "./index";
 
-// test('renders learn react link', () => {
-//     render(<BusinessCard/>);
-//     const linkElement = screen.getByText(/learn react/i);
-//     expect(linkElement).toBeInTheDocument();
-// });
+test('renders some stuff', () => {
+    render(ExampleBusinessCard)
+    const preCodeElt = screen.getByText(/ubernetes/i);
+    expect(preCodeElt).toBeInTheDocument();
+    // @ts-ignore
+    // eslint-disable-next-line testing-library/no-node-access
+    expect(preCodeElt.parentNode.parentNode.parentNode).toContain("clean, and well-documented")
+});
 
 
 test('renders skill list', () => {
