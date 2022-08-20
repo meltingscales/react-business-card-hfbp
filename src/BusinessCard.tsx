@@ -17,7 +17,7 @@ export type TBusinessCard = {
     skills?: string[],
 };
 
-const BusinessCard = (props: TBusinessCard) => {
+export const BusinessCard = (props: TBusinessCard) => {
 
     const componentRef = useRef(null);
     const handlePrint = useReactToPrint({

@@ -9,6 +9,7 @@
     "name": "Henry Post",
     "url": "https://github.com/HenryFBP/"
   },
+  "main": "src/BusinessCard.tsx",
   "module": "src/BusinessCard.tsx",
   "private": false,
   "dependencies": {
