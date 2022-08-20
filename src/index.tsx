@@ -7,7 +7,7 @@ import {BusinessCard} from "./BusinessCard";
 
 export const ExampleBusinessCard = (
     <BusinessCard
-        hidePrintButton={false}
+        showPrintButton={true}
         name={'Henry Post'}
         cell={'xxx-xxx-xxxx'}
         skills={[

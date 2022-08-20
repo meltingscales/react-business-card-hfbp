@@ -1,10 +1,11 @@
-import {Button, Container} from "react-bootstrap";
-import {Component} from "react";
+import {Button, Container, Row} from "react-bootstrap";
+import {Component, SyntheticEvent, useRef} from "react";
 import {LeftRightText} from "./tidbits/LeftRightText";
 import "./BusinessCard.scss"
+import {useReactToPrint} from "react-to-print";
 
 export type TBusinessCard = {
-    hidePrintButton?: boolean;
+    showPrintButton?: boolean;
     frontBlurb?: any;
     backBlurb?: any;
     name: string,
@@ -16,7 +17,15 @@ export type TBusinessCard = {
     skills?: string[],
 };
 
-export class BusinessCard extends Component<TBusinessCard> {
+export const BusinessCard = (props: TBusinessCard) => {
+
+    const componentRef = useRef(null);
+    const handlePrint = useReactToPrint({
+        content: function () {
+            return componentRef.current;
+        },
+    });
+
 
     //inspiration:
     //      https://png.pngtree.com/png-clipart/20200721/original/pngtree-programmer-business-card-black-png-image_4868136.jpg
@@ -27,34 +36,49 @@ export class BusinessCard extends Component<TBusinessCard> {
     // static WIDTH_TO_HEIGHT = (BusinessCard.WIDTH / BusinessCard.HEIGHT)
     // static HEIGHT_TO_WIDTH = (BusinessCard.HEIGHT / BusinessCard.WIDTH)
 
-    doThePrinty() {
-        alert("AOOGA printing for  "+this)
+    function doThePrinty(e: SyntheticEvent) {
+        console.log("AOOGA printing")
+        console.log(e)
+        console.log(componentRef.current)
+
+        //WOW! This works. This is terrible.
+
+        // @ts-ignore
+        componentRef.current.hidden = false
+        // @ts-ignore
+        componentRef.current['aria-hidden'] = false
+
+        console.log(componentRef.current)
+        handlePrint()
+
+        // @ts-ignore
+        componentRef.current.hidden = true
+        // @ts-ignore
+        componentRef.current['aria-hidden'] = true
+
     }
 
-    public renderPrintButton() {
-        return <>
-            <Button //WTF!!!! HOW DO YOU CENTER!! REEEEEEEE >:(
-                onClick={this.doThePrinty}
-                style={{
-                    textAlign: 'center'
-                }}
+    function renderPrintButton() {
+        return <div style={{textAlign: 'center'}}>
+            <Button
+                onClick={doThePrinty}
             >
-                Print {this.props.name}'s Business Cards
+                Print {props.name}'s Business Cards
             </Button>
-        </>
+        </div>
     }
 
 
-    renderBack() {
+    function renderBack() {
         return <Container className={'business-card business-card-back'}>
 
-            {this.props.backBlurb}
+            {props.backBlurb}
 
-            {this.props.skills ?
+            {props.skills ?
                 <span>
                 <pre>
                     <code>
-                        skills = '{this.props.skills.join(',')}'.split(',')
+                        skills = '{props.skills.join(',')}'.split(',')
                     </code>
                 </pre>
             </span>
@@ -64,41 +88,113 @@ export class BusinessCard extends Component<TBusinessCard> {
         </Container>
     }
 
-    renderFront() {
+    function renderFront() {
 
-        var h1Text = '~/' + (this.props.name.replace(' ', '')) + "";
+        var h1Text = '~/' + (props.name.replace(' ', '')) + "";
 
         return <Container className={'business-card business-card-front'}>
             <h1>{h1Text}</h1>
             <pre><code>
                 &gt; wget dev.srv/business-card.tex; xdg-open ./business-card.tex &#x23CE;
             </code></pre>
-            <p style={{textAlign: 'center'}}>{(this.props.headlines.join(' - '))}</p>
+            <p style={{textAlign: 'center'}}>{(props.headlines.join(' - '))}</p>
             <LeftRightText
-                left={this.props.frontBlurb}
+                left={props.frontBlurb}
                 right={
                     <ul style={{listStyle: "none"}}>
-                        <li>{this.props.cell}</li>
-                        <li>{this.props.location}</li>
-                        <li>{this.props.website}</li>
-                        <li>{this.props.email}</li>
+                        <li>{props.cell}</li>
+                        <li>{props.location}</li>
+                        <li>{props.website}</li>
+                        <li>{props.email}</li>
                     </ul>
                 }/>
         </Container>
     }
 
-    render() {
+    function renderPrintableSheetFront() {
+        return <div className={'print-inside print-front'}>
+            <Row>
+                {renderFront()}
+                {renderFront()}
+            </Row>
+            <hr/>
+            <Row>
+                {renderFront()}
+                {renderFront()}
+            </Row>
+            <hr/>
+            <Row>
+                {renderFront()}
+                {renderFront()}
+            </Row>
+            <hr/>
+            <Row>
+                {renderFront()}
+                {renderFront()}
+            </Row>
+        </div>
+    }
+
+    function renderPrintableSheetBack() {
+        return <div className={'print-inside print-back'}>
+            <Row>
+                {renderBack()}
+                {renderBack()}
+            </Row>
+            <hr/>
+            <Row>
+                {renderBack()}
+                {renderBack()}
+            </Row>
+            <hr/>
+            <Row>
+                {renderBack()}
+                {renderBack()}
+            </Row>
+            <hr/>
+            <Row>
+                {renderBack()}
+                {renderBack()}
+            </Row>
+        </div>
+
+    }
+
+    function renderPrintableSheet() {
         return <>
-            <Container className={'business-card-both'}>
-                {this.props.hidePrintButton ? null : this.renderPrintButton()}
-                {this.renderFront()}
+            <div
+                className={'print'}
+                // hidden={true}
+                // aria-hidden={true}
+                ref={componentRef} //this is what makes it get printed
+            >
+                {renderPrintableSheetFront()}
+                <div className={'pagebreak'}/>
+                {renderPrintableSheetBack()}
+            </div>
+        </>
+
+    }
+
+    function render() {
+        return <>
+            <Container
+                className={'business-card-both'}
+            >
+                {props.showPrintButton ? renderPrintButton() : null}
+                {renderFront()}
                 <hr/>
-                {this.renderBack()}
+                {renderBack()}
+
+                {/*
+                this is hidden normally.
+                TODO: Is there a way to not have to render this???
+                */}
+                {props.showPrintButton ? renderPrintableSheet() : null}
             </Container>
         </>;
     }
 
-    triggerPrint() {
-        throw  new Error("TODO NYI")
-    }
+    return render()
+
 }

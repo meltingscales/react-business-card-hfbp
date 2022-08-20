@@ -22,6 +22,7 @@ Then you can look into `index.tsx` for a sample (run `npm start` to see it for r
 
 ```tsx
 <BusinessCard
+    showPrintButton={true}
     name={'Henry Post'}
     cell={'xxx-xxx-xxxx'}
     skills={[
@@ -35,7 +36,7 @@ Then you can look into `index.tsx` for a sample (run `npm start` to see it for r
         // 'Backend APIs'
     ]}
     frontBlurb={
-        <img // TODO: you lazy BASTARD!!! GET A PROFESSIONAL HEADSHOT! >:3c
+        <img //this image is not square T_T TODO: you lazy BASTARD!!! GET A PROFESSIONAL HEADSHOT! >:3c
             src={'https://pbs.twimg.com/profile_images/1560595569730617344/yuAzEGGl_400x400.jpg'}
             style={{
                 width: '7.5em',
@@ -50,15 +51,15 @@ Then you can look into `index.tsx` for a sample (run `npm start` to see it for r
                 I have an intense drive to explain, document, and teach programming and technology concepts.
                 When creating code, I strive to create reusable, clean, and well-documented code.
                 I have a wide and deep history of programming projects, all under version control and most
-                on my
-                GitHub: <br/><br/>
+                on my GitHub:
+
+                <br/><br/>
 
                 <p style={{textAlign: "center"}}>https://github.com/HenryFBP/</p>
             </p>
             <p>
                 In short, I love to program, teach, and document my work; and I would say that I’m very good
-                at
-                it.
+                at it.
             </p>
         </Container>
     }

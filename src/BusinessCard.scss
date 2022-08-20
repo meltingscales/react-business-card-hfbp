@@ -1,3 +1,40 @@
+//    https://stackoverflow.com/questions/15603491/how-to-make-html-pages-print-at-a-consistent-size-from-chrome
+
+@media print {
+  @page {
+    size: A4 portrait;
+    /* you can also specify margins here: */
+    //margin: 25mm;
+    //margin-right: 45mm; /* for compatibility with both A4 and Letter */
+  }
+
+  .pagebreak {
+    page-break-after: always;
+  }
+  /* page-break-after works, as well */
+
+}
+
+.print .print-inside {
+  margin-top: 2in;
+}
+
+.print .business-card {
+  //margin-block: 2mm;
+}
+
+.print .business-card {
+  width: 3.5in !important;
+  height: 2.0in !important;
+  font-size: 0.575rem;
+}
+
+.print .business-card h1 {
+  font-size: 1.25rem; //WHY is this 1.25rem?
+}
+
+//end of printing crap
+
 
 .business-card {
   // avoids changing size if padding/margin changes.
