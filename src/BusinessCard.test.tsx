@@ -1,14 +1,17 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
-import {ExampleBusinessCard} from "./index";
+import {ExampleBusinessCard} from "./ExampleBusinessCard";
 
 test('renders some stuff', () => {
+
     render(ExampleBusinessCard)
-    const preCodeElt = screen.getByText(/ubernetes/i);
+    const preCodeElt = screen.getAllByText(/ubernetes/)[0];
+
     expect(preCodeElt).toBeInTheDocument();
+
     // @ts-ignore
     // eslint-disable-next-line testing-library/no-node-access
-    expect(preCodeElt.parentNode.parentNode.parentNode).toContain("clean, and well-documented")
+    expect(preCodeElt.parentNode.parentNode.parentNode.textContent).toContain("clean, and well-documented")
 });
 
 
