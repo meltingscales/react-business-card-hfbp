@@ -1,8 +1,8 @@
 {
-  "name": "business-card-hfbp",
+  "name": "react-business-card-hfbp",
   "version": "0.1.0",
   "license": "idk just link to my site or something. or dont. ily <3",
-  "description": "Extremely lightweight business card template",
+  "description": "Extremely lightweight business card template for ReactJS",
   "author": {
     "email": "resplendent.falconeer@gmail.com",
     "name": "Henry Post",

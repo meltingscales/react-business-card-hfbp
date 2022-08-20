@@ -8,11 +8,11 @@ class BusinessCard extends Component {
     //inspiration:
     //      https://png.pngtree.com/png-clipart/20200721/original/pngtree-programmer-business-card-black-png-image_4868136.jpg
 
-    //for calc the size later
-    static WIDTH = 3.5
-    static HEIGHT = 2.0
-    static WIDTH_TO_HEIGHT = (BusinessCard.WIDTH / BusinessCard.HEIGHT)
-    static HEIGHT_TO_WIDTH = (BusinessCard.HEIGHT / BusinessCard.WIDTH)
+    // //for calc the size later
+    // static WIDTH = 3.5
+    // static HEIGHT = 2.0
+    // static WIDTH_TO_HEIGHT = (BusinessCard.WIDTH / BusinessCard.HEIGHT)
+    // static HEIGHT_TO_WIDTH = (BusinessCard.HEIGHT / BusinessCard.WIDTH)
 
     // @ts-ignore
     props: {
