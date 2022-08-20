@@ -1,5 +1,7 @@
 //    https://stackoverflow.com/questions/15603491/how-to-make-html-pages-print-at-a-consistent-size-from-chrome
 
+//TODO all these need to be double checked -
+// I just pulled most of these measurements out of my ass because they "looked good enough" :(
 @media print {
   @page {
     size: A4 portrait;
@@ -8,15 +10,13 @@
     //margin-right: 45mm; /* for compatibility with both A4 and Letter */
   }
 
-  .pagebreak {
+  .pagebreak { //https://stackoverflow.com/questions/1664049/can-i-force-a-page-break-in-html-printing
     page-break-after: always;
   }
-  /* page-break-after works, as well */
-
 }
 
 .print .print-inside {
-  margin-top: 2in;
+  margin-top: 1.5in;
 }
 
 .print .business-card {

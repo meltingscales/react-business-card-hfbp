@@ -164,9 +164,9 @@ export const BusinessCard = (props: TBusinessCard) => {
         return <>
             <div
                 className={'print'}
-                // hidden={true}
-                // aria-hidden={true}
-                ref={componentRef} //this is what makes it get printed
+                hidden={true}
+                aria-hidden={true}
+                ref={componentRef} //this ref is what makes THIS SPECIFIC ELEMENT get printed when the button gets clicked
             >
                 {renderPrintableSheetFront()}
                 <div className={'pagebreak'}/>
