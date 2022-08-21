@@ -1,4 +1,4 @@
-# business-card-hfbp
+# react-business-card-hfbp
 
 ## what and why
 

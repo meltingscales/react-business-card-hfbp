@@ -9,7 +9,7 @@
     "name": "Henry Post",
     "url": "https://github.com/HenryFBP/"
   },
-  "main": "src/BusinessCard.tsx",
+  "main": "src/index.d.ts",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

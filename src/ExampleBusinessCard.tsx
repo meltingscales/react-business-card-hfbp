@@ -1,6 +1,6 @@
 import {Container} from "react-bootstrap";
 import React from "react";
-import BusinessCard from "./BusinessCard";
+import {BusinessCard} from "./BusinessCard";
 
 export let ExampleBusinessCard: JSX.Element;
 ExampleBusinessCard = (

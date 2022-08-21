@@ -4,7 +4,6 @@ import {Container} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import {ExampleBusinessCard} from "./ExampleBusinessCard";
-import BusinessCard from "./BusinessCard";
 
 
 export const root = ReactDOM.createRoot(
@@ -25,4 +24,3 @@ root.render(
 reportWebVitals();
 
 
-export default BusinessCard

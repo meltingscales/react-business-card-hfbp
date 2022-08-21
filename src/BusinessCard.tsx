@@ -4,7 +4,7 @@ import {LeftRightText} from "./tidbits/LeftRightText";
 import "./BusinessCard.scss"
 import {useReactToPrint} from "react-to-print";
 
-type TBusinessCard = {
+export type TBusinessCard = {
     showPrintButton?: boolean;
     frontBlurb?: any;
     backBlurb?: any;
@@ -17,7 +17,7 @@ type TBusinessCard = {
     skills?: string[],
 };
 
-const BusinessCard = (props: TBusinessCard) => {
+export const BusinessCard = (props: TBusinessCard) => {
 
     const componentRef = useRef(null);
     const handlePrint = useReactToPrint({
@@ -199,4 +199,3 @@ const BusinessCard = (props: TBusinessCard) => {
 
 }
 
-export default BusinessCard
