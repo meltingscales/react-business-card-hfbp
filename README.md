@@ -36,7 +36,7 @@ Then you can look into `index.tsx` for a sample (run `npm start` to see it for r
         // 'Backend APIs'
     ]}
     frontBlurb={
-        <img //this image is not square T_T TODO: you lazy BASTARD!!! GET A PROFESSIONAL HEADSHOT! >:3c
+        <img
             src={'https://pbs.twimg.com/profile_images/1560595569730617344/yuAzEGGl_400x400.jpg'}
             style={{
                 width: '7.5em',
@@ -78,7 +78,7 @@ Then you can look into `index.tsx` for a sample (run `npm start` to see it for r
 
 ## i dont like the design/etc
 
-change it! you got da sauce code :3c
+change it! you got the source code :3c
 
 fork and PR or just fork and rename it/copy the source code
 
