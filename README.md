@@ -1,5 +1,7 @@
 # react-business-card-hfbp
 
+<https://www.npmjs.com/package/react-business-card-hfbp>
+
 ## what and why
 
 Very lightweight (almost vanilla, we just use Bootstrap and SCSS) ReactJS business card template.
