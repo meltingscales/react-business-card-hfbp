@@ -19,12 +19,12 @@ export type TBusinessCard = {
 
 export const BusinessCard = (props: TBusinessCard) => {
 
-    const componentRef = useRef(null);
-    const handlePrint = useReactToPrint({
-        content: function () {
-            return componentRef.current;
-        },
-    });
+    // const componentRef = useRef(null);
+    // const handlePrint = useReactToPrint({
+    //     content: function () {
+    //         return componentRef.current;
+    //     },
+    // });
 
 
     //inspiration:
@@ -36,32 +36,32 @@ export const BusinessCard = (props: TBusinessCard) => {
     // static WIDTH_TO_HEIGHT = (BusinessCard.WIDTH / BusinessCard.HEIGHT)
     // static HEIGHT_TO_WIDTH = (BusinessCard.HEIGHT / BusinessCard.WIDTH)
 
-    function doThePrinty(e: SyntheticEvent) {
-        console.log("AOOGA printing")
-        console.log(e)
-        console.log(componentRef.current)
-
-        //WOW! This works. This is terrible.
-
-        // @ts-ignore
-        componentRef.current.hidden = false
-        // @ts-ignore
-        componentRef.current['aria-hidden'] = false
-
-        console.log(componentRef.current)
-        handlePrint()
-
-        // @ts-ignore
-        componentRef.current.hidden = true
-        // @ts-ignore
-        componentRef.current['aria-hidden'] = true
-
-    }
+    // function doThePrinty(e: SyntheticEvent) {
+    //     console.log("AOOGA printing")
+    //     console.log(e)
+    //     console.log(componentRef.current)
+    //
+    //     //WOW! This works. This is terrible.
+    //
+    //     // @ts-ignore
+    //     componentRef.current.hidden = false
+    //     // @ts-ignore
+    //     componentRef.current['aria-hidden'] = false
+    //
+    //     console.log(componentRef.current)
+    //     handlePrint()
+    //
+    //     // @ts-ignore
+    //     componentRef.current.hidden = true
+    //     // @ts-ignore
+    //     componentRef.current['aria-hidden'] = true
+    //
+    // }
 
     function renderPrintButton() {
         return <div style={{textAlign: 'center'}}>
             <Button
-                onClick={doThePrinty}
+                // onClick={doThePrinty}
             >
                 Print {props.name}'s Business Cards
             </Button>
@@ -166,7 +166,7 @@ export const BusinessCard = (props: TBusinessCard) => {
                 className={'print'}
                 hidden={true}
                 aria-hidden={true}
-                ref={componentRef} //this ref is what makes THIS SPECIFIC ELEMENT get printed when the button gets clicked
+                // ref={componentRef} //this ref is what makes THIS SPECIFIC ELEMENT get printed when the button gets clicked
             >
                 {renderPrintableSheetFront()}
                 <div className={'pagebreak'}/>
