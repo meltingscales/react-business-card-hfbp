@@ -1,7 +1,7 @@
 {
   "name": "react-business-card-hfbp",
   "type": "module",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "its free bro ;3c",
   "description": "Extremely lightweight business card template for ReactJS",
   "author": {
@@ -9,8 +9,10 @@
     "name": "Henry Post",
     "url": "https://github.com/HenryFBP/"
   },
-  "main": "src/BusinessCard.tsx",
-  "module": "src/BusinessCard.tsx",
+  "homepage": "https://github.com/HenryFBP/react-business-card-hfbp",
+  "source": "src/daModule.js",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -30,11 +32,15 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "_start": "react-scripts start",
+    "_build": "react-scripts build",
+    "build": "parcel build",
+    "watch": "parcel watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
