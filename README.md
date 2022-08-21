@@ -6,6 +6,8 @@
 
 Very lightweight (almost vanilla, we just use Bootstrap and SCSS) ReactJS business card template.
 
+Has very beta "print card" support (`showPrintButton=true`). If you use it, you will realize, I am bad at CSS.
+
 Image:
 
 ![https://github.com/HenryFBP/react-business-card-hfbp/raw/master/img.png](https://github.com/HenryFBP/react-business-card-hfbp/raw/master/img.png)
