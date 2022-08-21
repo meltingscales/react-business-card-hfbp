@@ -2,6 +2,7 @@ import {Button, Container, Row} from "react-bootstrap";
 import {SyntheticEvent, useRef} from "react";
 import {LeftRightText} from "./tidbits/LeftRightText";
 import "./BusinessCard.scss"
+import "./BusinessCardPrinting.scss"
 import {useReactToPrint} from "react-to-print";
 
 export type TBusinessCard = {
