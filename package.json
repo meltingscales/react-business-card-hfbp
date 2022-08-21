@@ -10,7 +10,7 @@
     "url": "https://github.com/HenryFBP/"
   },
   "homepage": "https://github.com/HenryFBP/react-business-card-hfbp",
-  "source": "src/daModule.js",
+  "source": "src/BusinessCard.tsx",
   "main": "dist/main.js",
   "module": "dist/module.js",
   "private": false,
