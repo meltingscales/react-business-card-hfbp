@@ -37,7 +37,7 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "_start": "react-scripts start",
+    "start": "react-scripts start",
     "_build": "react-scripts build",
     "build": "parcel build",
     "watch": "parcel watch",

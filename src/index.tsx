@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import {ExampleBusinessCard} from "./ExampleBusinessCard";
 
+console.log("We are in index.tsx :)")
 
 export const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
