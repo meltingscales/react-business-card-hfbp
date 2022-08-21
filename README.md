@@ -104,4 +104,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
     npm test
 
-## Usage
+## TODO
+
+- parcel js bundler
+- move all other than bootstrap to devDeps
+- copy  https://github.com/spa5k/is-url-online/
