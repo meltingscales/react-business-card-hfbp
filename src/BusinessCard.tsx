@@ -199,3 +199,4 @@ export const BusinessCard = (props: TBusinessCard) => {
 
 }
 
+export default BusinessCard
