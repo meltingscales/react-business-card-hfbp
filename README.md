@@ -110,4 +110,4 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 - use parcel js bundler - needed for publishing TypeScript modules
 - move all other than bootstrap to devDeps
-- copy  https://github.com/spa5k/is-url-online/
+- copy https://github.com/spa5k/is-url-online/ `package.json`
