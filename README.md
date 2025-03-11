@@ -20,7 +20,7 @@ Image:
 
 ## how to use
 
-    npm i business-card-hfbp
+    npm i react-business-card-hfbp
 
 Then you can look into `index.tsx` for a sample (run `npm start` to see it for realsies), or just use below code.
 
